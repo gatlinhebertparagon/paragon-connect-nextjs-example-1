@@ -1,5 +1,14 @@
 import { useCallback, useEffect, useState } from "react";
-import { paragon, SDK_EVENT } from "@useparagon/connect";
+import ConnectSDK, { SDK_EVENT } from "@useparagon/connect";
+
+const paragon = new ConnectSDK({
+  ZEUS_PUBLIC_URL: "https://zeus.useparagon.com",
+  DASHBOARD_PUBLIC_URL: "https://dashboard.useparagon.com",
+  CONNECT_PUBLIC_URL: "https://connect.useparagon.com",
+  DASHBOARD_PUBLIC_URL: "https://dashboard.useparagon.com",
+  PASSPORT_PUBLIC_URL: "https://passport.useparagon.com",
+  WORKER_PROXY_PUBLIC_URL: "https://proxy.useparagon.com",
+});
 
 if (typeof window !== "undefined") {
   window.paragon = paragon;
